@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Features from './Features'
-import Summary from './Summary'
-import Total from './Total'
+import MainForm from './MainForm/MainForm';
+import Summary from './MainSummary/Summary';
 import './App.css';
 
 const FEATURES = {
@@ -85,14 +84,11 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <form className="main__form">
-            <h2>Customize your laptop</h2>
-            <Features features={FEATURES} selected={this.state.selected} updateFeature={this.updateFeature} />
-          </form>
+          <MainForm features={FEATURES} selected={this.state.selected} updateFeature={this.updateFeature}/>
           <section className="main__summary">
             <h2>Your cart</h2>
             <Summary selected={this.state.selected}/>
-            <Total selected={this.state.selected}/>
+            
           </section>
         </main>
       </div>

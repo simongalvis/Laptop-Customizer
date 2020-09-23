@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
+import '../App.css'
 import SummaryOptions from './SummaryOptions';
+import Total from './Total';
 
 class Summary extends Component {
 
@@ -10,11 +11,17 @@ class Summary extends Component {
             const featureHash = feature + '-' + idx;
             const selectedOption = this.props.selected[feature];
             
-            return (<SummaryOptions 
+            return (
+                <div>
+                    <SummaryOptions 
                         featureHash={featureHash} 
                         feature={feature} 
                         selectedOption={selectedOption}
                         key={idx}/>
+                    <Total selected={this.props.selected}/>
+                </div>
+
+                    
             );
         });
         
